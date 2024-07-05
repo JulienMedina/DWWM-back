@@ -5,7 +5,14 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "ENV=dev node --watch index.js"
+    "start": "node index.js",
+    "docker-start": "sh -c '/wait-for-it.sh db:5432 -- npm start'",
+    "dev": "ENV=dev node --watch index.js",
+    "db:seeding": "psql -U olast -d olast -f ./app/data/seeding.sql",
+    "db:seeding:jb": "psql -p 5433 -f ./app/data/seeding.sql",
+    "db:seeding:al": "psql -U spedata -d olast -f ./app/data/seeding.sql",
+    "docker:image": "docker build -t o-last-back .",
+    "docker:run": "docker run -p 3000:3000 o-last-back"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +23,11 @@
     "globals": "^15.6.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.12.0"
   }
 }
