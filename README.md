@@ -33,7 +33,7 @@ L'API est organisée selon une architecture modulaire et utilise le modèle "rou
 | GET        | `/posts?filters...`  | Filtre et affiche les annonces               |
 | POST       | `/ratings`           | Ajoute une note à un utilisateur             |
 
-Pour plus de détails, consultez le [dossier des routes](./docs/routes.md).
+Pour plus de détails, consultez le dossier des routers.
 
 ## 🗂️ Base de données
 La base de données relationnelle est structurée en entités principales, notamment `User`, `Profile`, `Game`, `Post`, et `Rate`. Chaque entité a des relations et des contraintes spécifiques pour garantir l’intégrité et la cohérence des données.
