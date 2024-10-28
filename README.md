@@ -21,19 +21,13 @@ O'Last est une API RESTful développée avec Node.js et Express, destinée à co
 - **Validation des données** : Utilisation de Joi pour garantir que toutes les entrées utilisateur sont valides, sécurisées et conformes aux exigences.
 - **CORS** : Paramétrage des en-têtes CORS pour sécuriser les appels API depuis le front-end.
 
-## ⚙️ Architecture et Routes principales
-L'API est organisée selon une architecture modulaire et utilise le modèle "router-controller-service" pour séparer les responsabilités. Voici quelques-unes des routes principales :
+## ⚙️ Architecture 
+Une architecture a été mises en place afin de faciliter la gestion et la maintenance du projet :
 
-| Verbe HTTP | Route                | Description                                  |
-|------------|----------------------|----------------------------------------------|
-| GET        | `/users`             | Récupère la liste des utilisateurs           |
-| POST       | `/users`             | Crée un nouvel utilisateur                   |
-| GET        | `/profiles/:userId`  | Récupère les profils d’un utilisateur        |
-| POST       | `/posts`             | Crée une annonce de jeu                      |
-| GET        | `/posts?filters...`  | Filtre et affiche les annonces               |
-| POST       | `/ratings`           | Ajoute une note à un utilisateur             |
-
-Pour plus de détails, consultez le dossier des routers.
+controllers : Contient la logique métier de l'application
+models : gère les requêtes SQL vers la base de données
+middlewares : gère les différentes vérifications concernant la sécurité de l'application
+routes : Définit les routes et points de terminaison de l'API
 
 ## 🗂️ Base de données
 La base de données relationnelle est structurée en entités principales, notamment `User`, `Profile`, `Game`, `Post`, et `Rate`. Chaque entité a des relations et des contraintes spécifiques pour garantir l’intégrité et la cohérence des données.
